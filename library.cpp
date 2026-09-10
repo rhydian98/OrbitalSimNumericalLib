@@ -13,3 +13,78 @@ double Vector3::magnitude() const{
 
 
 }
+
+Vector3 operator+(const Vector3& v1, const Vector3 & v2 ) {
+
+    double x = v1.x + v2.x;
+    double y = v1.y + v2.y;
+    double z = v1.z + v2.z;
+
+    Vector3 v3 = Vector3(x,y,z);
+
+    return v3;
+
+}
+
+Vector3 operator-(const Vector3 & v1, const Vector3 & v2) {
+
+    double x = v1.x - v2.x;
+    double y = v1.y - v2.y;
+    double z = v1.z - v2.z;
+
+
+    Vector3 v3 (x,y,z);
+
+    return v3;
+
+
+}
+
+Vector3 operator*(const Vector3& v, double k) {
+
+    double x = v.x*k;
+    double y = v.y*k;
+    double z = v.z*k;
+
+    Vector3 v1(x,y,z);
+    return v1;
+
+
+}
+
+Vector3 operator*(double k, const Vector3& v) {
+
+    Vector3 v1 = v*k;
+    return v1;
+
+
+}
+
+
+
+double dot(const Vector3& v1, const Vector3& v2) {
+
+    double x = v1.x * v2.x;
+    double y = v1.y * v2.y;
+    double z = v1.z * v2.z;
+
+    return x + y + z;
+
+
+
+
+
+}
+
+Vector3 cross(const Vector3& v1, const Vector3& v2) {
+    double x = (v1.y*v2.z)-(v1.z*v2.y);
+    double y = (v1.z*v2.x)-(v1.x*v2.z);
+    double z = (v1.x*v2.y)-(v1.y*v2.x);
+
+    Vector3 v3(x,y,z);
+
+    return v3;
+
+
+}
+
