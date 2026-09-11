@@ -106,3 +106,20 @@ Vector3 cross(const Vector3& v1, const Vector3& v2) {
 
 }
 
+
+Vector3 Vector3::normalise() const{
+
+    double magV = magnitude();
+
+    if (magV == 0) {
+        throw(std::domain_error("Magnitude can't be 0"));
+
+    }
+
+    Vector3 normal = *this/magV;
+
+    return normal;
+
+}
+
+

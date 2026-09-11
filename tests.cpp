@@ -7,14 +7,14 @@
 void testMultiplication();
 void testDivision();
 void testDivisionByZero();
-
+void testNormalisation();
 
 int main() {
 
     testMultiplication();
     testDivision();
     testDivisionByZero();
-
+    testNormalisation();
 }
 
 void testMultiplication() {
@@ -60,6 +60,21 @@ void testDivisionByZero() {
         throw std::runtime_error{"Vector3 division by zero did not throw"};
     }
 
+
+
+}
+
+void testNormalisation(){
+
+    Vector3 v(5,10,15);
+
+    Vector3 v1 = v.normalise();
+
+    if (std::abs(v1.magnitude()-1.0) > 1e-12) {
+
+        std::cout << v1.magnitude()<< " Magnitude of normalised vector not 1" << std::endl;
+
+    }
 
 
 }
