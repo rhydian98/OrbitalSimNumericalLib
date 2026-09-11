@@ -37,6 +37,7 @@ public:
     friend Vector3 operator-(const Vector3 & v1, const Vector3 & v2);
     friend Vector3 operator*(const Vector3& v, double k);
     friend Vector3 operator*(double k, const Vector3& v);
+    friend Vector3 operator/(const Vector3& v1, double k);
     friend double dot(const Vector3& v1, const Vector3& v2);
     friend Vector3 cross(const Vector3& v1, const Vector3& v2);
 

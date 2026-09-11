@@ -1,6 +1,7 @@
 #include "library.h"
 
 #include <cmath>
+#include <stdexcept>
 
 double Vector3::magnitude() const{
 
@@ -56,6 +57,23 @@ Vector3 operator*(double k, const Vector3& v) {
 
     Vector3 v1 = v*k;
     return v1;
+
+
+}
+
+Vector3 operator/(const Vector3& v1, double k){
+
+    if (k == 0) {
+        throw std::domain_error("Cannot divide Vector3 by zero");
+    }
+
+    double x = v1.x / k;
+    double y = v1.y / k;
+    double z = v1.z / k;
+
+    Vector3 v2(x,y,z);
+
+    return v2;
 
 
 }
