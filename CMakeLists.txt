@@ -3,7 +3,10 @@ project(PurnellNumerical)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(PurnellNumerical STATIC library.cpp specific_angular_momentum.cpp)
+add_library(PurnellNumerical STATIC library.cpp specific_angular_momentum.cpp
+        dominantBody.h
+        dominantBody.cpp
+        massiveBody.h)
 
 add_executable(PurnellNumericalTest tests.cpp)
 
